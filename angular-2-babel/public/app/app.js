@@ -6,12 +6,26 @@ import 'reflect-metadata';
 import 'zone.js';
 
 import * as angular from 'angular2/angular2';
+import {
+	Router, 
+	RouteConfig, 
+	RouterLink, 
+	RouterOutlet, 
+	routerInjectables, 
+	LocationStrategy, 
+	HashLocationStrategy
+} from 'angular2/router';
 
-var app = angular.Component({
-	selector: 'app'
+var App = angular.Component({
+	selector: 'app',
+	appInjector: []
 })
 .View({
-	templateUrl: 'app/template.html'
+	templateUrl: 'app/template.html',
+	directives: [
+		RouterLink,
+		RouterOutlet
+	]
 })
 .Class({
 	constructor: [function(){
@@ -19,14 +33,31 @@ var app = angular.Component({
 	}]
 });
 
-angular.bootstrap(app, [
-	
+var PostList = angular.Component({
+	'selector': 'post-list'
+})
+.View({
+	template: 'post list view ------ maybe ----- next time '
+})
+.Class({
+	constructor: [function(){
+		
+	}]
+});
+
+RouteConfig({
+	path: '/', component: PostList, as: 'postList'
+})(App);
+
+angular.bootstrap(App, [
+	routerInjectables,
+	angular.bind(LocationStrategy).toClass(HashLocationStrategy)
 ])
 .then(
 	function(message){
-		console.log('first app success', message);
+		console.log('app success', message);
 	}
 )
 .catch(function(message){
-	console.log('first app error', message);
+	console.log('app error', message);
 });

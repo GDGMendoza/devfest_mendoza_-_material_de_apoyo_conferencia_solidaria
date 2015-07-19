@@ -11,7 +11,7 @@ System.config({
     "npm:*": "jspm_packages/npm/*.js",
     "*": "*.js"
   },
-  "defaultJSExtensions": true
+  "defaultJSExtensions": false
 });
 
 System.config({
@@ -23,6 +23,7 @@ System.config({
     "es6-shim": "github:es-shims/es6-shim@0.32.3",
     "reflect-metadata": "npm:reflect-metadata@0.1.0",
     "rx": "npm:rx@2.5.3",
+    "twbs/bootstrap": "github:twbs/bootstrap@3.3.5",
     "zone.js": "npm:zone.js@0.5.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -56,6 +57,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:twbs/bootstrap@3.3.5": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:angular2@2.0.0-alpha.31": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",

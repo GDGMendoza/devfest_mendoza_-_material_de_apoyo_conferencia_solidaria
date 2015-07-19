@@ -5,6 +5,6 @@ bs.init({
     server: "public",
     port: 3001,
     middleware: [],
-    files: "**/*.html, **/*.ts",
+    files: "**/*.html, **/*.js",
     notify: false
 });
