@@ -1,0 +1,21 @@
+{
+  "jspm": {
+    "directories": {
+      "baseURL": "public"
+    },
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-alpha.31",
+      "es6-shim": "github:es-shims/es6-shim@^0.32.3",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.0",
+      "rx": "npm:rx@^2.5.3",
+      "twbs/bootstrap": "github:twbs/bootstrap@^3.3.5",
+      "zone.js": "npm:zone.js@^0.5.2"
+    },
+    "devDependencies": {
+      "typescript": "github:mhegazy/typescript@v1.5-beta2"
+    }
+  },
+  "dependencies": {
+    "browser-sync": "^2.7.12"
+  }
+}
