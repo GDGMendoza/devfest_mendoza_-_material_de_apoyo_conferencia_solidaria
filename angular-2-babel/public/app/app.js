@@ -6,15 +6,24 @@ import 'reflect-metadata';
 import 'zone.js';
 
 import * as angular from 'angular2/angular2';
+
+import {
+	bind, 
+	Injectable
+} from "angular2/di";
+
 import {
 	Router, 
 	RouteConfig, 
 	RouterLink, 
 	RouterOutlet, 
-	routerInjectables, 
-	LocationStrategy, 
-	HashLocationStrategy
+	routerInjectables
 } from 'angular2/router';
+
+import {
+	ShadowDomStrategy, 
+	NativeShadowDomStrategy
+} from "angular2/render";
 
 var App = angular.Component({
 	selector: 'app',
@@ -45,19 +54,17 @@ var PostList = angular.Component({
 	}]
 });
 
-RouteConfig({
-	path: '/', component: PostList, as: 'postList'
-})(App);
+RouteConfig([
+	{path: '/', component: PostList, as: 'postList'}
+])(App);
 
 angular.bootstrap(App, [
 	routerInjectables,
-	angular.bind(LocationStrategy).toClass(HashLocationStrategy)
+	bind(ShadowDomStrategy).toClass(NativeShadowDomStrategy)
 ])
-.then(
-	function(message){
-		console.log('app success', message);
-	}
-)
+.then(function(message){
+	console.log('app success', message);
+})
 .catch(function(message){
 	console.log('app error', message);
 });
