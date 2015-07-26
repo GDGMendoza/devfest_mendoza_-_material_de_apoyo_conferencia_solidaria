@@ -1,0 +1,76 @@
+/* Do not remove this comments bellow. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+$rem-percentage: percentage(( 10 / 16)); // Percentage to set html font-size to match rem-base of 10px.
+
+$font-size-body: 1rem; // ~10px, our ideal font size.
+
+$font-size-base: 1.6em; // ~16px
+$font-size-large: 2.4em; // ~24px
+$font-size-small: 1.2em; // ~12px
+
+$line-height-base: 1.5em; // ~24px (em relative to $font-size-base)
+$line-height-large: 1.25em; // ~30px (em relative to $font-size-large)
+$line-height-small: 1.17em; // ~14px (em relative to $font-size-small)
+
+html { font-size: $rem-percentage; }
+body { font-size: $font-size-body; }
+
+.Header {
+    
+    display: flex;
+    align-content: center;
+    font-size: $font-size-body;
+    
+    // .Header-title
+    @include element(title) {
+        /* GDGdia: */
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: $font-size-large;
+        line-height: $line-height-large;
+        color: #000000;
+    }
+    
+    // .Header-button
+    @include element(button) {
+        
+        /* Box : */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 4.8em;
+        border-radius: 3px;
+        padding-left: 1.6em;
+        padding-right: 1.6em;
+        margin-left: auto;
+        
+        // .Header-button--green
+        @include modifier(green) {
+            background: #5FA80F;
+        }
+    
+        // .Header-button--gray
+        @include modifier(gray) {
+            background: #5FA80F;
+        }
+        
+        // .Header-button-text
+        @include element(text) {
+            /* Text : */
+            font-family: Arial-BoldMT;
+            font-size: $font-size-base;
+            line-height: $line-height-base;
+            color: #FFFFFF;
+        }
+        
+    }
+    
+}
+
+/* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector
+// endinjector
