@@ -4,7 +4,7 @@
       "baseURL": "public"
     },
     "dependencies": {
-      "angular2": "npm:angular2@^2.0.0-alpha.31",
+      "angular2": "npm:angular2@^2.0.0-alpha.32",
       "es6-shim": "github:es-shims/es6-shim@^0.32.3",
       "reflect-metadata": "npm:reflect-metadata@^0.1.0",
       "rx": "npm:rx@^2.5.3",

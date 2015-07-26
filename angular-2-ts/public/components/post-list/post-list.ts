@@ -4,13 +4,14 @@ import 'zone.js';
 
 
 import {Component, View, NgFor} from 'angular2/angular2';
+import {PostListItem} from 'components/post-list-item/post-list-item.ts?';
 
 @Component({
 	selector: 'post-list'
 })
 @View({
 	templateUrl: 'components/post-list/template.html',
-	directives: [NgFor]
+	directives: [NgFor, PostListItem]
 })
 class PostList {
 	postItem = {

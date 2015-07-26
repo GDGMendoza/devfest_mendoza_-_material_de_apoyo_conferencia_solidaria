@@ -7,23 +7,15 @@ import 'zone.js';
 
 
 import {
+	bind,
 	bootstrap,
 	Component, 
 	View
 } from 'angular2/angular2';
 
 import {
-	bind, Injectable
-} from "angular2/di";
-
-import {
 	Http, httpInjectables
 } from "angular2/http";
-
-import {
-	ShadowDomStrategy, 
-	NativeShadowDomStrategy
-} from "angular2/render";
 
 import {
 	Router, 
@@ -33,10 +25,17 @@ import {
 	routerInjectables
 } from 'angular2/router';
 
+import { 
+	locationInjectables 
+} from 'common/location.ts?';
+
+import { 
+	shadowDomInjectables 
+} from 'common/shadow_dom.ts?'; // custom injectable that checks if ShadowDom is available to inject
+
 import {
 	PostList
-} from '../components/components.ts?';
-
+} from 'components/components.ts?';
 
 @RouteConfig([
 	{path: '/', component: PostList, as: 'post-list'}
@@ -58,11 +57,9 @@ class App {
 	}
 }
 
-
-
 bootstrap(App, [
-	routerInjectables,
-	bind(ShadowDomStrategy).toClass(NativeShadowDomStrategy)
+	locationInjectables,
+	shadowDomInjectables
 ])
 .then(function(message){
 	console.log('app success', message);

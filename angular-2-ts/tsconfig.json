@@ -1,16 +1,15 @@
 {
-  "version": "1.5.0",
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "sourceMap": true,
-    "listFiles": true,
-//    "outDir": "dist",
-    "experimentalDecorators": true
-  }
+	"version": "1.5.0",
+	"compilerOptions": {
+		"declaration": false,
+		"module": "commonjs",
+		"target": "es5",
+		"emitDecoratorMetadata": true,
+		"listFiles": true,
+		"noImplicitAny": false,
+		"noLib": false,
+		"removeComments": true,
+		"sourceMap": true,
+		"experimentalDecorators": true
+	}
 }
