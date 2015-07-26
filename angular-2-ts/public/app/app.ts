@@ -5,7 +5,6 @@ import 'es6-shim';
 import 'reflect-metadata';
 import 'zone.js';
 
-
 import {
 	bind,
 	bootstrap,
@@ -34,11 +33,58 @@ import {
 } from 'common/shadow_dom.ts?'; // custom injectable that checks if ShadowDom is available to inject
 
 import {
-	PostList
-} from 'components/components.ts?';
+	BlogList
+} from 'app/blog/list/blog-list.module.ts?';
+
+import {
+	BlogCreate
+} from 'app/blog/create/blog-create.module.ts?';
+
+import {
+	BlogDetail
+} from 'app/blog/detail/blog-detail.module.ts?';
+
+import {
+	BlogEdit
+} from 'app/blog/edit/blog-edit.module.ts?';
+
+/*
+
+  function routeConfig($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('blog.list', {
+        url: '/',
+        templateUrl: 'app/blog/list/list.html',
+        controller: 'PostListController',
+        controllerAs: 'PostList'
+      })
+      .state('blog.create', {
+        url: '/create',
+        templateUrl: 'app/blog/form/form.html',
+        controller: 'PostCreateController',
+        controllerAs: 'PostCreate'
+      })
+      .state('blog.detail', {
+        url: '/:id',
+        templateUrl: 'app/blog/detail/detail.html',
+        controller: 'PostDetailController',
+        controllerAs: 'PostDetail'
+      })
+      .state('blog.edit', {
+        url: '/:id/edit',
+        templateUrl: 'app/blog/form/form.html',
+        controller: 'PostEditController',
+        controllerAs: 'PostEdit'
+      });
+
+
+ */
 
 @RouteConfig([
-	{path: '/', component: PostList, as: 'post-list'}
+	{path: '/', component: BlogList, as: 'blog-list'},
+	{path: '/create', component: BlogCreate, as: 'blog-create'},
+	{path: '/:id', component: BlogDetail, as: 'blog-detail'},
+	{path: '/:id/edit', component: BlogEdit, as: 'blog-edit'}
 ])
 @Component({
 	selector: 'app',

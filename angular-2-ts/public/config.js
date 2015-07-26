@@ -20,7 +20,6 @@ System.config({
     "es6-shim": "github:es-shims/es6-shim@0.32.3",
     "reflect-metadata": "npm:reflect-metadata@0.1.0",
     "rx": "npm:rx@2.5.3",
-    "twbs/bootstrap": "github:twbs/bootstrap@3.3.5",
     "typescript": "github:mhegazy/typescript@v1.5-beta2",
     "zone.js": "npm:zone.js@0.5.2",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -37,9 +36,6 @@ System.config({
     },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
-    },
-    "github:twbs/bootstrap@3.3.5": {
-      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:angular2@2.0.0-alpha.32": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",

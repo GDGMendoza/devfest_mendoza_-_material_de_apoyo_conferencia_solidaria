@@ -1,6 +1,5 @@
-<style>
-	
-</style>
-
-<a [router-link]=['/post-list']>Post List</a>
+<a [router-link]=['/blog-list']>Post List</a>
+<a [router-link]=['/blog-create']>Create post</a>
+<a [router-link]="['/blog-detail', {id: 1}]">Detail post 1</a>
+<a [router-link]="['/blog-edit', {id: 1}]">Edit post 1</a>
 <router-outlet></router-outlet>
