@@ -1,73 +1,229 @@
+@import 'bem';
+
 /* Do not remove this comments bellow. It's the markers used by wiredep to inject
    sass dependencies when defined in the bower.json of your dependencies */
 // bower:scss
 // endbower
 
-$rem-percentage: percentage(( 10 / 16)); // Percentage to set html font-size to match rem-base of 10px.
+$rem-percentage: percentage((10 / 16));
+// Percentage to set html font-size to match rem-base of 10px.
 
-$font-size-body: 1rem; // ~10px, our ideal font size.
+$font-size-body: 1rem;
+// ~10px, our ideal font size.
 
-$font-size-base: 1.6em; // ~16px
-$font-size-large: 2.4em; // ~24px
-$font-size-small: 1.2em; // ~12px
+$font-size-base: 1.6em;
+// ~16px
+$font-size-large: 2.4em;
+// ~24px
+$font-size-small: 1.2em;
+// ~12px
 
-$line-height-base: 1.5em; // ~24px (em relative to $font-size-base)
-$line-height-large: 1.25em; // ~30px (em relative to $font-size-large)
-$line-height-small: 1.17em; // ~14px (em relative to $font-size-small)
+$line-height-base: 1.5em;
+// ~24px (em relative to $font-size-base)
+$line-height-large: 1.25em;
+// ~30px (em relative to $font-size-large)
+$line-height-small: 1.17em;
+// ~14px (em relative to $font-size-small)
 
-html { font-size: $rem-percentage; }
-body { font-size: $font-size-body; }
+$font-family-default: Arial, Helvetica, sans-serif;
+
+// Media Query Ranges
+$small-breakpoint:  em-calc(640)  !default;
+$medium-breakpoint: em-calc(1024) !default;
+$large-breakpoint:  em-calc(1440) !default;
+$xlarge-breakpoint: em-calc(1920) !default;
+
+$small-range:   (0, $small-breakpoint) !default;
+$medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint) !default;
+$large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint)  !default;
+$xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint) !default;
+$xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999)) !default;
+
+$screen: "only screen" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "#{$screen} and (orientation: portrait)" !default;
+
+$small-up: $screen !default;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})" !default;
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})" !default;
+
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})" !default;
+
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})" !default;
+
+$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})" !default;
+$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})" !default;
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $rem-percentage;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-body;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#container > nav {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
 
 .Header {
-    
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: $font-size-body;
+  font-family: $font-family-default;
+  margin-bottom: 4em;
+
+  // .Header-title
+  @include element(title) {
+    /* GDGdia: */
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    font-size: $font-size-large;
+    line-height: $line-height-large;
+    color: #000000;
+  }
+
+  // .Header-button
+  @include element(button) {
+
+    /* Box : */
     display: flex;
-    align-content: center;
-    font-size: $font-size-body;
-    
-    // .Header-title
-    @include element(title) {
-        /* GDGdia: */
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 500;
-        font-size: $font-size-large;
-        line-height: $line-height-large;
-        color: #000000;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    min-height: 4.8em;
+    border-radius: 3px;
+    padding-left: 1.6em;
+    padding-right: 1.6em;
+    margin-left: auto;
+
+    &:hover {
+      opacity: 0.9;
     }
-    
-    // .Header-button
-    @include element(button) {
-        
-        /* Box : */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 4.8em;
-        border-radius: 3px;
-        padding-left: 1.6em;
-        padding-right: 1.6em;
-        margin-left: auto;
-        
-        // .Header-button--green
-        @include modifier(green) {
-            background: #5FA80F;
-        }
-    
-        // .Header-button--gray
-        @include modifier(gray) {
-            background: #5FA80F;
-        }
-        
-        // .Header-button-text
-        @include element(text) {
-            /* Text : */
-            font-family: Arial-BoldMT;
-            font-size: $font-size-base;
-            line-height: $line-height-base;
-            color: #FFFFFF;
-        }
-        
+
+    // .Header-button--green
+    @include modifier(green) {
+      background: #5FA80F;
     }
-    
+
+    // .Header-button--gray
+    @include modifier(gray) {
+      background: #5FA80F;
+    }
+
+    // .Header-button-text
+    @include element(text) {
+      /* Text : */
+      font-size: $font-size-base;
+      line-height: $font-size-base;
+      color: #FFFFFF;
+      word-break: break-all;
+    }
+
+  }
+
+}
+
+.Post {
+
+  /* card: */
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.30);
+  border-radius: 3px;
+  padding: 4rem;
+  font-family: $font-family-default;
+
+  @include element(header) {
+    display: flex;
+    flex-direction: column;
+    height: 108px;
+
+    @include element(articleTitle) {
+      /* Enacabezado: */
+      font-size: 24px;
+      font-weight: bold;
+      color: #000000;
+      line-height: 30px;
+    }
+
+    @include element(articleDivider) {
+      /* Line: */
+      border: 1px solid rgba(0,0,0,0.10);
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+
+    @include element(articleDate) {
+      /* Creado 23/07/2015: */
+      font-size: 14px;
+      color: rgba(0,0,0,0.54);
+      line-height: 18px;
+    }
+
+  }
+
+  @include element(articleContent) {
+    /* Es un hecho establec: */
+    font-size: 16px;
+    color: #000000;
+    line-height: 24px;
+  }
+
+  @include element(footer) {
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+
+    @include element(articleBtn) {
+
+      /* Button: */
+      font-size: 16px;
+      line-height: 18px;
+      border-radius: 3px;
+      padding: 0.8em;
+      margin-right: 0.8em;
+
+      @include modifier(readMore) {
+        /* Rectangle 9: */
+        border: 1px solid #4A90E2;
+        color: #4A90E2;
+      }
+
+      @include modifier(edit) {
+        /* Editar: */
+        font-size: 16px;
+        color: rgba(0,0,0,0.54);
+        line-height: 18px;
+      }
+
+    }
+  }
+
+
 }
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
