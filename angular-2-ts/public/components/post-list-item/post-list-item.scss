@@ -1,0 +1,87 @@
+/* Do not remove this comments bellow. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+@import "../../styles/mixins/bem.scss";
+@import "../../styles/mixins/functions.scss";
+@import "../../styles/mixins/variables.scss";
+
+.Post {
+
+  /* card: */
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.30);
+  border-radius: 3px;
+  padding: 4rem;
+  font-family: $font-family-default;
+
+  @include element(header) {
+    display: flex;
+    flex-direction: column;
+    height: 108px;
+
+    @include element(articleTitle) {
+      /* Enacabezado: */
+      font-size: 24px;
+      font-weight: bold;
+      color: #000000;
+      line-height: 30px;
+    }
+
+    @include element(articleDivider) {
+      /* Line: */
+      border: 1px solid rgba(0,0,0,0.10);
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+
+    @include element(articleDate) {
+      /* Creado 23/07/2015: */
+      font-size: 14px;
+      color: rgba(0,0,0,0.54);
+      line-height: 18px;
+    }
+
+  }
+
+  @include element(articleContent) {
+    /* Es un hecho establec: */
+    font-size: 16px;
+    color: #000000;
+    line-height: 24px;
+  }
+
+  @include element(footer) {
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+
+    @include element(articleBtn) {
+
+      /* Button: */
+      font-size: 16px;
+      line-height: 18px;
+      border-radius: 3px;
+      padding: 0.8em;
+      margin-right: 0.8em;
+
+      @include modifier(readMore) {
+        /* Rectangle 9: */
+        border: 1px solid #4A90E2;
+        color: #4A90E2;
+      }
+
+      @include modifier(edit) {
+        /* Editar: */
+        font-size: 16px;
+        color: rgba(0,0,0,0.54);
+        line-height: 18px;
+      }
+
+    }
+  }
+}

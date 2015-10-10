@@ -4,14 +4,13 @@
       "baseURL": "public"
     },
     "dependencies": {
-      "angular2": "npm:angular2@^2.0.0-alpha.32",
-      "es6-shim": "github:es-shims/es6-shim@^0.32.3",
-      "reflect-metadata": "npm:reflect-metadata@^0.1.0",
-      "rx": "npm:rx@^2.5.3",
-      "zone.js": "npm:zone.js@^0.5.2"
+      "angular2": "npm:angular2@^2.0.0-alpha.40",
+      "es6-shim": "github:es-shims/es6-shim@^0.33.3",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "zone.js": "npm:zone.js@^0.5.5"
     },
     "devDependencies": {
-      "typescript": "github:mhegazy/typescript@v1.5-beta2"
+      "typescript": "npm:typescript@^1.6.2"
     }
   },
   "devDependencies": {
@@ -45,6 +44,7 @@
     "gulp-util": "~3.0.5",
     "http-proxy-middleware": "~0.0.5",
     "jshint-stylish": "~2.0.0",
+    "jspm": "^0.16.12",
     "karma": "~0.12.36",
     "karma-angular-filesort": "~0.1.0",
     "karma-jasmine": "~0.3.5",

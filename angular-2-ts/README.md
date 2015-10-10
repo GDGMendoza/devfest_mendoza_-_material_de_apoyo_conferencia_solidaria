@@ -8,8 +8,8 @@ Ejecutar por terminal:
 
 ```js
 npm install // instala las dependencias de node
-npm install jspm@beta -g // instala jspm globalmente
-jspm install // instala los modulos a usar por jspm
+npm install jspm --save-dev // instala jspm localmente
+node node_modules/jspm/jspm install // instala los modulos a usar por jspm
 gulp serve // ejecuta el servidor
 ```
 

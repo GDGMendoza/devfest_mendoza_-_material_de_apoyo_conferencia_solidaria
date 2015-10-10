@@ -4,18 +4,7 @@
 // endbower
 
 @import "../../styles/mixins/bem.scss";
-
-$rem-percentage: percentage(( 10 / 16)); // Percentage to set html font-size to match rem-base of 10px.
-
-$font-size-body: 1rem; // ~10px, our ideal font size.
-
-$font-size-base: 1.6em; // ~16px
-$font-size-large: 2.4em; // ~24px
-$font-size-small: 1.2em; // ~12px
-
-$line-height-base: 1.5em; // ~24px (em relative to $font-size-base)
-$line-height-large: 1.25em; // ~30px (em relative to $font-size-large)
-$line-height-small: 1.17em; // ~14px (em relative to $font-size-small)
+@import "../../styles/mixins/variables.scss";
 
 html { font-size: $rem-percentage; }
 body { font-size: $font-size-body; }

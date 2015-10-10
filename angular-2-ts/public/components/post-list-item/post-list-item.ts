@@ -16,7 +16,10 @@ interface IPostListItem {
 	properties: ['title', 'description', 'id']
 })
 @View({
-	templateUrl: 'components/post-list-item/template.html'
+	templateUrl: 'components/post-list-item/template.html',
+	styleUrls: [
+		'components/post-list-item/post-list-item.scss'
+	]
 })
 class PostListItem implements IPostListItem {
 	

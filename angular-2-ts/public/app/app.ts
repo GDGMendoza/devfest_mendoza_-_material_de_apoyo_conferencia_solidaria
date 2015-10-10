@@ -11,17 +11,17 @@ import {
 	Component, 
 	View
 } from 'angular2/angular2';
-
+/*
 import {
 	Http, httpInjectables
 } from "angular2/http";
-
+*/
 import {
 	Router, 
 	RouteConfig, 
 	RouterLink, 
 	RouterOutlet, 
-	routerInjectables
+//	routerInjectables
 } from 'angular2/router';
 
 import { 
@@ -47,6 +47,8 @@ import {
 import {
 	BlogEdit
 } from 'app/blog/edit/blog-edit.module.ts?';
+
+import {PostService} from 'components/components.ts?';
 
 /*
 
