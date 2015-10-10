@@ -1,10 +1,5 @@
 /// <reference path="../../../../typings/angular2/angular2.d.ts"/>
 
-//https://github.com/jspm/registry/issues/432
-import 'es6-shim';
-import 'reflect-metadata';
-import 'zone.js';
-
 import {
 	Component, 
 	View

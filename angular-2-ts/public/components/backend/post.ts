@@ -1,10 +1,6 @@
 /// <reference path="../../../typings/angular2/angular2.d.ts"/>
 /// <reference path="../../../typings/angular2/http.d.ts"/>
 
-import 'es6-shim';
-import 'reflect-metadata';
-import 'zone.js';
-
 import {Http, Response} from "angular2/http";
 
 class PostService {

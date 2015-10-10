@@ -1,8 +1,3 @@
-import 'es6-shim';
-import 'reflect-metadata';
-import 'zone.js';
-
-
 import {Component, View} from 'angular2/angular2';
 
 interface IPostListItem {
@@ -13,7 +8,7 @@ interface IPostListItem {
 
 @Component({
 	selector: 'post-list-item',
-	properties: ['title', 'description', 'id']
+	inputs: ['title', 'description', 'id']
 })
 @View({
 	templateUrl: 'components/post-list-item/template.html',

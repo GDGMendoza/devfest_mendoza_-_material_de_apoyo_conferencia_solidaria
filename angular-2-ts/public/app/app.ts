@@ -1,10 +1,5 @@
 /// <reference path="../../typings/angular2/angular2.d.ts"/>
 
-//https://github.com/jspm/registry/issues/432
-import 'es6-shim';
-import 'reflect-metadata';
-import 'zone.js';
-
 import {
 	bind,
 	bootstrap,
@@ -16,12 +11,13 @@ import {
 	Http, httpInjectables
 } from "angular2/http";
 */
-import {
-	Router, 
+import { 
+	routerBindings,
+	ROUTER_BINDINGS,
+	Router,
 	RouteConfig, 
 	RouterLink, 
-	RouterOutlet, 
-//	routerInjectables
+	RouterOutlet
 } from 'angular2/router';
 
 import { 
@@ -83,14 +79,13 @@ import {PostService} from 'components/components.ts?';
  */
 
 @RouteConfig([
-	{path: '/', component: BlogList, as: 'blog-list'},
-	{path: '/create', component: BlogCreate, as: 'blog-create'},
-	{path: '/:id', component: BlogDetail, as: 'blog-detail'},
-	{path: '/:id/edit', component: BlogEdit, as: 'blog-edit'}
+	{path: '/', component: BlogList, as: 'BlogList'},
+	{path: '/create', component: BlogCreate, as: 'BlogCreate'},
+	{path: '/:id', component: BlogDetail, as: 'BlogDetail'},
+	{path: '/:id/edit', component: BlogEdit, as: 'BlogEdit'}
 ])
 @Component({
-	selector: 'app',
-	appInjector: []
+	selector: 'app'
 })
 @View({
 	templateUrl: 'app/template.html',
@@ -100,14 +95,15 @@ import {PostService} from 'components/components.ts?';
 	]
 })
 class App {
-	constructor(router: Router){
+	constructor() {
 		
 	}
 }
 
 bootstrap(App, [
 	locationInjectables,
-	shadowDomInjectables
+	shadowDomInjectables,
+	routerBindings(App)
 ])
 .then(function(message){
 	console.log('app success', message);

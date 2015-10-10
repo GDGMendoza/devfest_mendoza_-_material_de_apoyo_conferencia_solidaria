@@ -12,13 +12,16 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-  directories: {
-    "common:*": "common/*",
-    "components:*": "components/*"
+  meta: {
+    "angular2/angular2": {
+      "deps": ["reflect-metadata", "zone.js", "es6-shim", "@reactivex/rxjs"]
+    }
   },
-
   map: {
+    "@reactivex/rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.2",
     "angular2": "npm:angular2@2.0.0-alpha.40",
+    "common:*": "common/*",
+    "components:*": "components/*",
     "es6-shim": "github:es-shims/es6-shim@0.33.6",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "typescript": "npm:typescript@1.6.2",
@@ -55,6 +58,10 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "npm:@reactivex/rxjs@5.0.0-alpha.2": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:angular2@2.0.0-alpha.40": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

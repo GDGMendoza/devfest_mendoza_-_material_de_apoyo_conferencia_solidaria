@@ -1,7 +1,3 @@
-import 'es6-shim';
-import 'reflect-metadata';
-import 'zone.js';
-
 import {Component, View, NgFor} from 'angular2/angular2';
 import {PostListItem} from 'components/post-list-item/post-list-item.ts?';
 
