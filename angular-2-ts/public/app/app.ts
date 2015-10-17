@@ -11,9 +11,8 @@ import {
 	Http, httpInjectables
 } from "angular2/http";
 */
-import { 
-	routerBindings,
-	ROUTER_BINDINGS,
+import {
+	ROUTER_PROVIDERS,
 	Router,
 	RouteConfig, 
 	RouterLink, 
@@ -103,7 +102,7 @@ class App {
 bootstrap(App, [
 	locationInjectables,
 	shadowDomInjectables,
-	routerBindings(App)
+	ROUTER_PROVIDERS
 ])
 .then(function(message){
 	console.log('app success', message);

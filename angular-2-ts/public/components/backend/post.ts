@@ -4,7 +4,7 @@
 import {Http, Response} from "angular2/http";
 
 class PostService {
-/*	
+
   http: Http;
 	
 	constructor(http: Http) {
@@ -22,11 +22,10 @@ class PostService {
 				}, function (res: Response) {
 					rejected(res.json());
 				});
-			
 		});
 		
 	}
-*/
+
 }
 
 export {PostService};
