@@ -1,1 +1,9 @@
 .idea/
+node_modules/
+pids/
+logs/
+results/
+bower_components/
+.tmp/
+
+npm-debug.log
