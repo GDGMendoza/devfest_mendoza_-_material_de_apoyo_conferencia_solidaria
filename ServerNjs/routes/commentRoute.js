@@ -6,7 +6,7 @@ var router = express.Router();
 var commentController = require('.././controllers/commentController');
 
 /////////////////////////////////////////////////
-/*              Create a new Post              */
+/*              Create a new Comment              */
 /////////////////////////////////////////////////
 router.route('/').post(commentController.createComment)
 
@@ -21,15 +21,9 @@ router.route('/:CommentID').delete(commentController.deleteComment);
 router.route('/:CommentID').put(commentController.updateComment);
 
 /////////////////////////////////////////////////
-/*             Get a list of Posts             */
+/*        Get all comments of a Post           */
 /////////////////////////////////////////////////
-router.route('/').get(commentController.getPosts);
-
-/////////////////////////////////////////////////
-/*            get a Posts by PostID            */
-/////////////////////////////////////////////////
-router.route('/:PostID').get(commentController.getPost);
-
+router.route('/').get(commentController.getComments);
 
 
 module.exports = router;
