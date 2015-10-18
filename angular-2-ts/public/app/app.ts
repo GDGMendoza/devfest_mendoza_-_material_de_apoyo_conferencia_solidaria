@@ -91,6 +91,9 @@ import {PostService} from 'components/components.ts?';
 	directives: [
 		RouterLink,
 		RouterOutlet
+	],
+	styleUrls: [
+		'app/app.scss'
 	]
 })
 class App {
