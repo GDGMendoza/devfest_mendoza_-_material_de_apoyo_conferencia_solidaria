@@ -29,7 +29,10 @@ System.config({
     "angular2": "npm:angular2@2.0.0-alpha.44",
     "common:*": "common/*",
     "components:*": "components/*",
+    "css": "github:systemjs/plugin-css@0.1.18",
     "es6-shim": "github:es-shims/es6-shim@0.33.6",
+    "kristoferjoseph/flexboxgrid": "github:kristoferjoseph/flexboxgrid@6.3.0",
+    "necolas/normalize.css": "github:necolas/normalize.css@3.0.3",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "typescript": "npm:typescript@1.6.2",
     "zone.js": "npm:zone.js@0.5.8",
@@ -65,6 +68,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:necolas/normalize.css@3.0.3": {
+      "css": "github:systemjs/plugin-css@0.1.18"
     },
     "npm:@reactivex/rxjs@5.0.0-alpha.4": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
