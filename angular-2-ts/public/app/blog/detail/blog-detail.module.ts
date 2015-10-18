@@ -18,7 +18,7 @@ import {
 		BlogHeader
 	],
 	styleUrls: [
-		'app/blog/detail/blog-detail.module.scss'
+		'app/blog/detail/blog-detail.module.scss', 'components/card/card.scss'
 	]
 })
 class BlogDetail {
