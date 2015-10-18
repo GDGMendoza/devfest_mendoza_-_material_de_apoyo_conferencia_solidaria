@@ -1,12 +1,16 @@
 /**
  * Created by leo@GDGMendoza on 19/09/2015.
  */
+exports.createComment = createComment;
+exports.getComments = getComments;
+exports.deleteComment = deleteComment;
+exports.updateComment = updateComment;
 
-var createComment = function(req, res, next) {
-    var post = require('./../models/post.js');
+function createComment(req, res, next) {
+    var comment = require('./../models/comment.js');
     var PostTitle = req.body.PostTitle;
     var PostText = req.body.PostText;
-    post.createPost(
+    comment.createPost(
         PostTitle,
         PostText,
         function(response){
@@ -14,14 +18,14 @@ var createComment = function(req, res, next) {
             res.send(JSON.stringify(response));
         }
     );
-};
+}
 
-var getComments = function(req, res, next) {
-    var post = require('./../models/post.js');
+function getComments(req, res, next) {
+    var comment = require('./../models/comment.js');
     console.log(req);
     var Limit = req.body.Limit;
     var From = req.body.From;
-    post.getPosts(
+    comment.getPosts(
         Limit,
         From,
         function(response){
@@ -29,26 +33,26 @@ var getComments = function(req, res, next) {
             res.send(JSON.stringify(response));
         }
     );
-};
+}
 
-var deleteComment = function(req, res, next) {
-    var post = require('./../models/post.js');
+function deleteComment(req, res, next) {
+    var comment = require('./../models/comment.js');
     var PostID = req.params.PostID;
-    post.deletePost(
+    comment.deletePost(
         PostID,
         function(response){
             res.setHeader('Content-Type', 'application/json');
             res.send(JSON.stringify(response));
         }
     );
-};
+}
 
-var updateComments = function(req, res, next) {
-    var post = require('./../models/post.js');
+function updateComment(req, res, next) {
+    var comment = require('./../models/comment.js');
     var PostID = req.params.PostID;
     var PostTitle = req.body.PostTitle;
     var PostText = req.body.PostText;
-    post.updatePost(
+    comment.updatePost(
         PostID,
         PostTitle,
         PostText,
@@ -57,10 +61,4 @@ var updateComments = function(req, res, next) {
             res.send(JSON.stringify(response));
         }
     );
-};
-
-exports.createPost = createPost;
-exports.getPosts = getPosts;
-exports.getPost = getPost;
-exports.deletePost = deletePost;
-exports.updatePost = updatePost;
+}
