@@ -23,7 +23,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 start-xs">
-			<a class="btn-ch btn-actions btn-edit">Editar</a><a class="btn-ch btn-actions btn-delete">Borrar</a>
+			<button class="btn-ch btn-actions btn-edit" [router-link]="['/BlogEdit', {id: post.PostID}]">Editar</button><button class="btn-ch btn-actions btn-delete">Borrar</button>
 		</div>
 	</div>
 	</div>

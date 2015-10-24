@@ -1,4 +1,4 @@
-/// <reference path="../../../../typings/angular2/angular2.d.ts"/>
+/// <reference path="../../../../typings/project/project.d.ts" />
 
 import {
 	Component, 
@@ -10,7 +10,7 @@ import {
 	BlogHeader
 } from 'app/blog/blog-header';
 
-import {RouteParams} from 'angular2/router';
+import {RouteParams, RouterLink} from 'angular2/router';
 
 import {PostService} from 'components/components';
 
@@ -20,7 +20,7 @@ import {PostService} from 'components/components';
 @View({
 	templateUrl: 'app/blog/detail/template.html',
 	directives: [
-		BlogHeader
+		BlogHeader, RouterLink
 	],
 	styleUrls: [
 		'app/blog/detail/blog-detail.module.scss', 'components/card/card.scss'

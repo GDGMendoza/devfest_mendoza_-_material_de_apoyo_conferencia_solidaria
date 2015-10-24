@@ -1,13 +1,8 @@
+/// <reference path="../../../typings/project/project.d.ts"/>
+
 import {Component, View} from 'angular2/angular2';
 
 import {RouterLink} from 'angular2/router';
-
-interface IPostListItem {
-	PostID: number;
-	PostDate: string;
-	PostTitle: string;
-	PostText: string;
-}
 
 @Component({
 	selector: 'post-list-item',
@@ -20,14 +15,14 @@ interface IPostListItem {
 	],
 	directives: [RouterLink]
 })
-export class PostListItem implements IPostListItem {
+export class PostListItem implements project.IPost {
 	
 	PostID;
 	PostDate;
 	PostTitle;
 	PostText;
 	
-	set post (post: IPostListItem) {
+	set post (post: project.IPost) {
 		this.PostID = post.PostID;
 		this.PostDate = post.PostDate;
 		this.PostTitle = post.PostTitle;

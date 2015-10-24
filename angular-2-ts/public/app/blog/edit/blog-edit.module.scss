@@ -1,0 +1,87 @@
+textarea.editpost {
+	box-sizing: border-box;
+  width: 100%;
+  min-height: 31.25rem;
+  margin: 0px 0px 20px;
+  padding: 1.6rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 3px;
+  font-family: monospace;
+  text-align: left;
+  font-size: 1.488rem;
+  line-height: 150%;
+  transition: all 0.3s;
+  resize: none;
+}
+
+textarea.editpost:focus {
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.1)
+}
+
+::-webkit-input-placeholder {
+	font-weight: 400;
+  color: rgba(0,0,0,0.3);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	font-weight: 400;
+  color: rgba(0,0,0,0.3);  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	font-weight: 400;
+  color: rgba(0,0,0,0.3);  
+}
+
+:-ms-input-placeholder {  
+	font-weight: 400;
+  color: rgba(0,0,0,0.3);  
+}
+
+button, input {line-height:normal}
+
+input.datepost {
+	height: 32px;
+	padding: 0rem .8rem;
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 2px;
+	color: rgba(0,0,0,0.8)
+}
+
+input.titleeditpost {
+	box-sizing: border-box;
+	width: 100%;
+	height: 9rem;
+	font-size: 3.2rem;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 2% 0%;
+  border: 0px;
+  color: rgba(0,0,0,0.8);
+  transition: all .3s;
+}
+
+input.titleeditpost:focus {
+	padding: 1.6rem;
+	background-color: rgba(0,0,0,0.03);
+	border-radius: 3px;
+}
+
+button, select { text-transform:none}
+
+select.typepost {
+	height: 36px;
+  width: 200px;
+  padding: 0rem 1.28rem;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  background: #FFF;
+  color: #888;
+  outline: none;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
