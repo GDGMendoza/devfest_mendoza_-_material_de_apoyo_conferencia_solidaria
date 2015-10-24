@@ -1,7 +1,7 @@
 <div class="Post">
   <div class="Post-header">
     <div class="Post-header-articleTitle">
-      {{id}} - {{title}}
+      {{PostTitle}}
     </div>
     <div class="Post-header-articleDivider"></div>
     <div class="Post-header-articleDate">
@@ -9,10 +9,10 @@
     </div>
   </div>
   <div class="Post-articleContent">
-    {{description}}
+    {{PostText}}
   </div>
   <div class="Post-footer">
-    <div class="Post-footer-articleBtn Post-footer-articleBtn--readMore">Leer más</div>
-    <div class="Post-footer-articleBtn Post-footer-articleBtn--edit">Editar</div>
+    <button [router-link]="['/BlogDetail', {id: PostID}]" class="Post-footer-articleBtn Post-footer-articleBtn--readMore">Leer más</button>
+    <div [router-link]="['/BlogEdit', {id: PostID}]" class="Post-footer-articleBtn Post-footer-articleBtn--edit">Editar</div>
   </div>
 </div>

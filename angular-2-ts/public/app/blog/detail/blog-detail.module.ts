@@ -2,12 +2,17 @@
 
 import {
 	Component, 
-	View
+	View,
+	Inject
 } from 'angular2/angular2';
 
 import {
 	BlogHeader
 } from 'app/blog/blog-header';
+
+import {RouteParams} from 'angular2/router';
+
+import {PostService} from 'components/components';
 
 @Component({
 	selector: 'blog-detail'
@@ -23,9 +28,18 @@ import {
 })
 export class BlogDetail {
 
-	post = {
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		title: 'Post Title'
-	};
+	post = {};
+	
+	constructor (@Inject(PostService) postService: PostService, @Inject(RouteParams) params: RouteParams) {
+		
+		var self = this;
+		
+		var id = params.get('id');
+		
+		postService.getPost(id).then(function (post) {
+			self.post = post;
+		});
+		
+	}
 	
 }
