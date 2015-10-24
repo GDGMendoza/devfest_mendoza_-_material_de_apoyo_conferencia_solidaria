@@ -16,7 +16,7 @@ interface IPostListItem {
 		'components/post-list-item/post-list-item.scss'
 	]
 })
-class PostListItem implements IPostListItem {
+export class PostListItem implements IPostListItem {
 	
 	/*
 		To avoid infinite loop, we prefix with '_'
@@ -25,35 +25,32 @@ class PostListItem implements IPostListItem {
 	_id;
 	_title;
 	
-	constructor(){
-		console.log('post list item', this);
+	constructor () {
+
 	}
 	
-	get description(){
+	get description () {
 		return this._description;
 	}
 	
-	get id(){
+	get id () {
 		return this._id;
 	}
 	
-	get title(){
+	get title () {
 		return this._title;
 	}
 	
-	set description(description: string) {
-		console.log('description', description);
+	set description (description: string) {
 		this._description = description;
 	}
 	
-	set id(id: string) {
+	set id (id: string) {
 		this._id = id;
 	}
 	
-	set title(title: string) {
+	set title (title: string) {
 		this._title = title;
 	}
 	
 }
-
-export {PostListItem};

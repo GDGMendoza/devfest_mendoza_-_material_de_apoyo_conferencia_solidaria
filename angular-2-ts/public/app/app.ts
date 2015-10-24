@@ -1,16 +1,15 @@
-/// <reference path="../../typings/angular2/angular2.d.ts"/>
+/// <reference path="../jspm_packages/npm/angular2@2.0.0-alpha.44/angular2.d.ts"/>
 
 import {
-	bind,
 	bootstrap,
-	Component, 
+	Component,
 	View
 } from 'angular2/angular2';
-/*
+
 import {
-	Http, httpInjectables
+	HTTP_PROVIDERS
 } from "angular2/http";
-*/
+
 import {
 	ROUTER_PROVIDERS,
 	Router,
@@ -43,39 +42,7 @@ import {
 	BlogEdit
 } from 'app/blog/edit/blog-edit.module';
 
-import {PostService} from 'components/components';
-
-/*
-
-  function routeConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('blog.list', {
-        url: '/',
-        templateUrl: 'app/blog/list/list.html',
-        controller: 'PostListController',
-        controllerAs: 'PostList'
-      })
-      .state('blog.create', {
-        url: '/create',
-        templateUrl: 'app/blog/form/form.html',
-        controller: 'PostCreateController',
-        controllerAs: 'PostCreate'
-      })
-      .state('blog.detail', {
-        url: '/:id',
-        templateUrl: 'app/blog/detail/detail.html',
-        controller: 'PostDetailController',
-        controllerAs: 'PostDetail'
-      })
-      .state('blog.edit', {
-        url: '/:id/edit',
-        templateUrl: 'app/blog/form/form.html',
-        controller: 'PostEditController',
-        controllerAs: 'PostEdit'
-      });
-
-
- */
+import {backendInjectables} from '../components/components';
 
 @RouteConfig([
 	{path: '/', component: BlogList, as: 'BlogList'},
@@ -97,19 +64,19 @@ import {PostService} from 'components/components';
 	]
 })
 class App {
-	constructor() {
-		
-	}
+
 }
 
 bootstrap(App, [
+	HTTP_PROVIDERS,
+	ROUTER_PROVIDERS,
+	backendInjectables,
 	locationInjectables,
-	shadowDomInjectables,
-	ROUTER_PROVIDERS
+	shadowDomInjectables
 ])
-.then(function(message){
+.then(function(message) {
 	console.log('app success', message);
 })
-.catch(function(message){
+.catch(function(message) {
 	console.log('app error', message);
 });

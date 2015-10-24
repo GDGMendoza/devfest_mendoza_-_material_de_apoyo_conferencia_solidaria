@@ -21,8 +21,6 @@ import {
 		'app/blog/blog-header.scss'
 	]
 })
-class BlogHeader {
+export class BlogHeader {
 	
 }
-
-export {BlogHeader};

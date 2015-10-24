@@ -18,8 +18,6 @@ import {
 		BlogHeader
 	]
 })
-class BlogCreate {
+export class BlogCreate {
 	
 }
-
-export {BlogCreate};
