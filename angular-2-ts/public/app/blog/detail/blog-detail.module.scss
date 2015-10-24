@@ -1,14 +1,15 @@
-.articulo {
-    top: -126px;
+.article {
+  position: relative;
+  top: -12rem;
 }
 .title-article {
 	display: block;
-	font-size: 2rem;
-	line-height: 4rem;
+	font-size: 3.2rem;
+	line-height: 6.4rem;
 	font-family: 'Helvetica', Arial, sans-serif;
 	font-weight: 600;
 	color: rgba(0,0,0,0.84);
-	margin-bottom: 0.15rem;
+	margin-bottom: 0.24rem;
 }
 hr.separator {
     border: solid 1px rgba(0,0,0,0.03);
@@ -16,48 +17,47 @@ hr.separator {
 }
 .date {
 	color: rgba(0,0,0,0.54);
-    font-size: 0.84rem;
-    letter-spacing: 0.03rem;
+  font-size: 1.344rem;
+  letter-spacing: 0.048rem;
 }
 .category {
 	color: rgba(0,0,0,0.54);
-    font-size: 0.84rem;
-    letter-spacing: 0.03rem;
+  font-size: 1.344rem;
+  letter-spacing: 0.048rem;
 }
-
 p.text-article {
-    font-family: Georgia, serif;
-    font-size: 1.13rem;
-    line-height: 170%;
-    color: rgba(0,0,0,0.84);
+  font-family: Georgia, serif;
+  font-size: 1.808rem;
+  line-height: 170%;
+  color: rgba(0,0,0,0.84);
 }
 .titleinputs{
 	display: block;
-    margin: 0px 0px 8px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    text-align: left;
-    letter-spacing: 0.08rem;
-    color: rgba(0,0,0,0.35);
+  margin: 0px 0px 1.28px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0.128rem;
+  color: rgba(0,0,0,0.35);
 }
 .btn-lg{
     min-width: 64px;
     height: 48px;
     margin: 8px 0px;
-    padding: 0.8rem 0.8em 0.8rem 0.6rem;
+    padding: 1.28rem 1.28rem 1.28rem 0.96rem;
     transition: all 0.35s;
 }
 .btn-ch {
     min-width: 64px;
     height: 36px;
-    padding: 0.8rem 0.6rem;
-    margin-right: 0.4rem;
-    border-radius: 0.2rem;
-    font-size: 0.8rem;
+    padding: 1.28rem 0.96rem;
+    margin-right: 0.64rem;
+    border-radius: 0.32rem;
+    font-size: 1.28rem;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.04rem;
-    line-height: 2rem;
+    letter-spacing: 0.064rem;
+    line-height: 3.2rem;
     transition: all 0.35s;
 }
 .btn-actions {
@@ -90,7 +90,7 @@ p.text-article {
     line-height: 100%;
     background-color: transparent;
     border: 0px;
-    border-radius: 0.3em;
+    border-radius: 0.48rem;
     color: rgb(54, 148, 110);
     font-family: 'Helvetica', Arial, sans-serif;
     font-weight: bold;
@@ -104,7 +104,7 @@ p.text-article {
 }
 .btn-save {
     background-color: transparent;
-    border-radius: 0.3em;
+    border-radius: 0.48rem;
     color: #00BCD4;
     font-family: 'Helvetica', Arial, sans-serif;
     font-weight: bold;

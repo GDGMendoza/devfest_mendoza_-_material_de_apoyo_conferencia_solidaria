@@ -6,9 +6,6 @@
 @import "../../styles/mixins/bem.scss";
 @import "../../styles/mixins/variables.scss";
 
-html { font-size: $rem-percentage; }
-body { font-size: $font-size-body; }
-
 .Header {
   
     // .Header--container
