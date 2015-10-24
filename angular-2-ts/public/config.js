@@ -12,7 +12,17 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-
+  packages: {
+    "/app": {
+      "defaultExtension": "ts"
+    },
+    "/common": {
+      "defaultExtension": "ts"
+    },
+    "/components": {
+      "defaultExtension": "ts"
+    }
+  },
   meta: {
     "angular2/angular2": {
       "deps": [

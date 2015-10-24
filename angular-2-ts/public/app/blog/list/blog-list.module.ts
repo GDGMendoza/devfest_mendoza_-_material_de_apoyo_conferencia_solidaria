@@ -7,11 +7,11 @@ import {
 
 import {
 	BlogHeader
-} from 'app/blog/blog-header.ts?';
+} from 'app/blog/blog-header';
 
 import {
 	PostList
-} from 'components/post-list/post-list.ts?';
+} from 'components/post-list/post-list';
 
 @Component({
 	selector: 'blog-list'

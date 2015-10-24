@@ -21,29 +21,29 @@ import {
 
 import { 
 	locationInjectables 
-} from 'common/location.ts?';
+} from 'common/location';
 
 import { 
 	shadowDomInjectables 
-} from 'common/shadow_dom.ts?'; // custom injectable that checks if ShadowDom is available to inject
+} from 'common/shadow_dom'; // custom injectable that checks if ShadowDom is available to inject
 
 import {
 	BlogList
-} from 'app/blog/list/blog-list.module.ts?';
+} from 'app/blog/list/blog-list.module';
 
 import {
 	BlogCreate
-} from 'app/blog/create/blog-create.module.ts?';
+} from 'app/blog/create/blog-create.module';
 
 import {
 	BlogDetail
-} from 'app/blog/detail/blog-detail.module.ts?';
+} from 'app/blog/detail/blog-detail.module';
 
 import {
 	BlogEdit
-} from 'app/blog/edit/blog-edit.module.ts?';
+} from 'app/blog/edit/blog-edit.module';
 
-import {PostService} from 'components/components.ts?';
+import {PostService} from 'components/components';
 
 /*
 

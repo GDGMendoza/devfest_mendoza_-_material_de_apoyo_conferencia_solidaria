@@ -7,7 +7,7 @@ import {
 
 import {
 	BlogHeader
-} from 'app/blog/blog-header.ts?';
+} from 'app/blog/blog-header';
 
 @Component({
 	selector: 'blog-detail'

@@ -1,5 +1,5 @@
 import {Component, View, NgFor} from 'angular2/angular2';
-import {PostListItem} from 'components/post-list-item/post-list-item.ts?';
+import {PostListItem} from 'components/post-list-item/post-list-item';
 
 @Component({
 	selector: 'post-list'
