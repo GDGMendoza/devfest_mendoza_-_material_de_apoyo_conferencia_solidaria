@@ -1,59 +1,32 @@
+/// <reference path="../../../typings/project/project.d.ts"/>
+
 import {Component, View} from 'angular2/angular2';
 
-interface IPostListItem {
-	_title: string;
-	_description: string;
-	_id: number;
-}
+import {RouterLink} from 'angular2/router';
 
 @Component({
 	selector: 'post-list-item',
-	inputs: ['title', 'description', 'id']
+	inputs: ['post']
 })
 @View({
 	templateUrl: 'components/post-list-item/template.html',
 	styleUrls: [
 		'components/post-list-item/post-list-item.scss'
-	]
+	],
+	directives: [RouterLink]
 })
-class PostListItem implements IPostListItem {
+export class PostListItem implements project.IPost {
 	
-	/*
-		To avoid infinite loop, we prefix with '_'
-	*/
-	_description;
-	_id;
-	_title;
+	PostID;
+	PostDate;
+	PostTitle;
+	PostText;
 	
-	constructor(){
-		console.log('post list item', this);
-	}
-	
-	get description(){
-		return this._description;
-	}
-	
-	get id(){
-		return this._id;
-	}
-	
-	get title(){
-		return this._title;
-	}
-	
-	set description(description: string) {
-		console.log('description', description);
-		this._description = description;
-	}
-	
-	set id(id: string) {
-		this._id = id;
-	}
-	
-	set title(title: string) {
-		this._title = title;
+	set post (post: project.IPost) {
+		this.PostID = post.PostID;
+		this.PostDate = post.PostDate;
+		this.PostTitle = post.PostTitle;
+		this.PostText = post.PostText;
 	}
 	
 }
-
-export {PostListItem};

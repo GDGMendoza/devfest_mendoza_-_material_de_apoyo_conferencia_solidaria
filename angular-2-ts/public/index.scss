@@ -1,0 +1,22 @@
+/* Do not remove this comments bellow. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+@import "styles/mixins/bem.scss";
+@import "styles/mixins/variables.scss";
+
+html { 
+  font-size: $rem-percentage; 
+}
+body { 
+  font-size: $font-size-body; 
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-weight: 400;
+  background: #EEE;
+  line-height: 1.4rem;
+}

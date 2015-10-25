@@ -1,17 +1,18 @@
-/// <reference path="../../../../typings/angular2/angular2.d.ts"/>
+/// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.44/angular2.d.ts"/>
 
 import {
 	Component, 
-	View
+	View,
+	NgFor,
+	Inject,
+	EventEmitter
 } from 'angular2/angular2';
+
+import {PostListItem, PostService} from 'components/components';
 
 import {
 	BlogHeader
-} from 'app/blog/blog-header.ts?';
-
-import {
-	PostList
-} from 'components/post-list/post-list.ts?';
+} from 'app/blog/blog-header';
 
 @Component({
 	selector: 'blog-list'
@@ -20,11 +21,18 @@ import {
 	templateUrl: 'app/blog/list/template.html',
 	directives: [
 		BlogHeader,
-		PostList
+		PostListItem,
+		NgFor
 	]
 })
-class BlogList {
+export class BlogList {
 	
+	postList = [];
+	
+	constructor (@Inject(PostService) postService: PostService) {
+		var self = this;
+		postService.getPostList().then(function (list) {
+			self.postList = list;
+		});
+	}
 }
-
-export {BlogList};

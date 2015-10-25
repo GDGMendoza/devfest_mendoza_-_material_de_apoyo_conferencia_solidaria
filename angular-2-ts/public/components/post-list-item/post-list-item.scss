@@ -73,6 +73,12 @@
         /* Rectangle 9: */
         border: 1px solid #4A90E2;
         color: #4A90E2;
+        background: transparent;
+        
+        &:hover {
+          background-color: #4A90E2;
+          color: #FFFFFF;
+        }
       }
 
       @include modifier(edit) {

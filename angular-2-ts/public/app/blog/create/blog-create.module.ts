@@ -7,7 +7,7 @@ import {
 
 import {
 	BlogHeader
-} from 'app/blog/blog-header.ts?';
+} from 'app/blog/blog-header';
 
 @Component({
 	selector: 'blog-create'
@@ -18,8 +18,6 @@ import {
 		BlogHeader
 	]
 })
-class BlogCreate {
+export class BlogCreate {
 	
 }
-
-export {BlogCreate};

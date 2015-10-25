@@ -7,13 +7,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="jspm_packages/system.js"></script>
 	  <script src="config.js"></script>
-		
+
+		<link rel="stylesheet" href="index.scss">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 	  <script>
-	    System.import('app/app.ts?');
+			System.import('necolas/normalize.css/normalize.css!');
+			System.import('kristoferjoseph/flexboxgrid/css/flexboxgrid.min.css!');
+	    System.import('app/app');
 	  </script>
 	</head>
 	<body>
-		<div class="container">
+		<div>
 			<app>Iniciando App</app>
 		</div>
 	</body>

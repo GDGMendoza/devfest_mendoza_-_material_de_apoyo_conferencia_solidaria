@@ -12,17 +12,37 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-  meta: {
-    "angular2/angular2": {
-      "deps": ["reflect-metadata", "zone.js", "es6-shim", "@reactivex/rxjs"]
+  packages: {
+    "/app": {
+      "defaultExtension": "ts"
+    },
+    "/common": {
+      "defaultExtension": "ts"
+    },
+    "/components": {
+      "defaultExtension": "ts"
     }
   },
+  meta: {
+    "angular2/angular2": {
+      "deps": [
+        "reflect-metadata",
+        "zone.js",
+        "es6-shim",
+        "@reactivex/rxjs"
+      ]
+    }
+  },
+
   map: {
-    "@reactivex/rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.2",
-    "angular2": "npm:angular2@2.0.0-alpha.40",
+    "@reactivex/rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.6",
+    "angular2": "npm:angular2@2.0.0-alpha.44",
     "common:*": "common/*",
     "components:*": "components/*",
+    "css": "github:systemjs/plugin-css@0.1.18",
     "es6-shim": "github:es-shims/es6-shim@0.33.6",
+    "kristoferjoseph/flexboxgrid": "github:kristoferjoseph/flexboxgrid@6.3.0",
+    "necolas/normalize.css": "github:necolas/normalize.css@3.0.3",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "typescript": "npm:typescript@1.6.2",
     "zone.js": "npm:zone.js@0.5.8",
@@ -59,18 +79,27 @@ System.config({
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
     },
-    "npm:@reactivex/rxjs@5.0.0-alpha.2": {
+    "github:necolas/normalize.css@3.0.3": {
+      "css": "github:systemjs/plugin-css@0.1.18"
+    },
+    "npm:@reactivex/rxjs@5.0.0-alpha.4": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:angular2@2.0.0-alpha.40": {
+    "npm:@reactivex/rxjs@5.0.0-alpha.6": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:angular2@2.0.0-alpha.44": {
+      "@reactivex/rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.4",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "reflect-metadata": "npm:reflect-metadata@0.1.2",
-      "rx": "npm:rx@2.5.1",
+      "reflect-metadata": "npm:reflect-metadata@0.1.1",
       "zone.js": "npm:zone.js@0.5.8"
     },
     "npm:asn1.js@2.2.1": {
@@ -269,15 +298,16 @@ System.config({
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
     },
+    "npm:reflect-metadata@0.1.1": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:reflect-metadata@0.1.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:ripemd160@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:rx@2.5.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:sha.js@2.4.4": {

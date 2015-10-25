@@ -5,8 +5,11 @@
     },
     "dependencies": {
       "@reactivex/rxjs": "npm:@reactivex/rxjs@^5.0.0-alpha.2",
-      "angular2": "npm:angular2@^2.0.0-alpha.40",
+      "angular2": "npm:angular2@^2.0.0-alpha.44",
+      "css": "github:systemjs/plugin-css@^0.1.18",
       "es6-shim": "github:es-shims/es6-shim@^0.33.6",
+      "kristoferjoseph/flexboxgrid": "github:kristoferjoseph/flexboxgrid@^6.3.0",
+      "necolas/normalize.css": "github:necolas/normalize.css@^3.0.3",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "zone.js": "npm:zone.js@^0.5.8"
     },
