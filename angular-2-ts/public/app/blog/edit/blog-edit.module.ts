@@ -3,11 +3,12 @@
 import {
 	Component, 
 	View,
-	Inject
+	Inject,
+	FORM_DIRECTIVES
 } from 'angular2/angular2';
 
 import {
-	RouteParams, RouterLink
+	RouteParams, Router, RouterLink
 } from 'angular2/router';
 
 import {
@@ -24,7 +25,7 @@ import {
 @View({
 	templateUrl: 'app/blog/edit/template.html',
 	directives: [
-		BlogHeader, RouterLink
+		BlogHeader, RouterLink, FORM_DIRECTIVES
 	],
 	styleUrls: [
 		'app/blog/detail/blog-detail.module.scss', 'app/blog/edit/blog-edit.module.scss', 'styles/buttons.scss', 'styles/card.scss'
@@ -32,18 +33,23 @@ import {
 })
 export class BlogEdit {
 	
-	post = {};
+	post: project.IPost = {
+		PostCategory: '',
+		PostText: '',
+		PostTitle: ''
+	};
 	
-	constructor (@Inject(PostService) postService: PostService, @Inject(RouteParams) params: RouteParams) {
-		
-		var self = this;
+	constructor (@Inject(PostService) public postService: PostService, @Inject(RouteParams) params: RouteParams, @Inject(Router) public router: Router) {
 		
 		var id = params.get('id');
 		
-		postService.getPost(id).then(function (post) {
-			self.post = post;
-		});
-		
+		postService.getPost(id).then(post => this.post = post);
+	}
+	
+	updatePost () {
+		this.postService.updatePost(this.post).then(() => {
+			this.router.navigate(['/BlogDetail', {id: this.post.PostID}]);
+		}).catch(e => console.error('e', e));
 	}
 	
 }

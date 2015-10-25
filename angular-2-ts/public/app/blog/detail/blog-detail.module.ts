@@ -10,7 +10,7 @@ import {
 	BlogHeader
 } from 'app/blog/blog-header';
 
-import {RouteParams, RouterLink} from 'angular2/router';
+import {Router, RouteParams, RouterLink} from 'angular2/router';
 
 import {PostService} from 'components/components';
 
@@ -28,18 +28,23 @@ import {PostService} from 'components/components';
 })
 export class BlogDetail {
 
-	post = {};
+	post: project.IPost = {
+		PostCategory: '',
+		PostText: '',
+		PostTitle: ''
+	};
 	
-	constructor (@Inject(PostService) postService: PostService, @Inject(RouteParams) params: RouteParams) {
-		
-		var self = this;
+	constructor (@Inject(PostService) public postService: PostService, @Inject(RouteParams) params: RouteParams, @Inject(Router) public router: Router) {
 		
 		var id = params.get('id');
 		
-		postService.getPost(id).then(function (post) {
-			self.post = post;
-		});
-		
+		postService.getPost(id).then(post => this.post = post);
+	}
+	
+	deletePost () {
+		this.postService.deletePost(this.post.PostID).then(() => {
+			this.router.navigate(['/BlogList']);
+		}).catch(e => console.error('e', e));
 	}
 	
 }
