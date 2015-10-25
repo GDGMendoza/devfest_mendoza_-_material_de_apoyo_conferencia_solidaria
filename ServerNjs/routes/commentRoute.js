@@ -8,7 +8,7 @@ var commentController = require('.././controllers/commentController');
 /////////////////////////////////////////////////
 /*              Create a new Comment              */
 /////////////////////////////////////////////////
-router.route('/').post(commentController.createComment)
+router.route('/').post(commentController.createComment);
 
 /////////////////////////////////////////////////
 /*    mark a Comment as deleted by CommentID   */
