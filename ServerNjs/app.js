@@ -12,8 +12,9 @@ var routes = require('./routes/index');
 var post = require('./routes/postRoute');
 var comment = require('./routes/commentRoute');
 
-_ = require('lodash');
-Q = require('Q');
+var _ = require('lodash');
+var Q = require('Q');
+var cors = require('cors');
 
 var app = express();
 
@@ -30,6 +31,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+if (app.get('env') === 'development') { 
+  app.use(cors());
+}
 
 app.use('/', routes);
 app.use('/post', post);
