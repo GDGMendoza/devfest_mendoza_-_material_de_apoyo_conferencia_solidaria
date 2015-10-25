@@ -23,7 +23,7 @@ import {PostService} from 'components/components';
 		BlogHeader, RouterLink
 	],
 	styleUrls: [
-		'app/blog/detail/blog-detail.module.scss', 'components/card/card.scss'
+		'app/blog/detail/blog-detail.module.scss', 'styles/buttons.scss', 'styles/card.scss'
 	]
 })
 export class BlogDetail {
