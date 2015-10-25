@@ -1,3 +1,5 @@
 <blog-header></blog-header>
 
-<post-list-item *ng-for="#post of postList;" [post]="post"></post-list-item>
+<div class="articles-container">
+	<post-list-item *ng-for="#post of postList;#i = index;" [post]="post"></post-list-item>
+</div>

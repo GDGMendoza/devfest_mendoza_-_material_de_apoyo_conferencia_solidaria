@@ -91,3 +91,57 @@
     }
   }
 }
+figure {
+  margin: 0;
+}
+.list-figure {
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    min-height: 35rem;
+    border-radius: 5px 5px 0px 0px;
+    background-image: url("https://g-design.storage.googleapis.com/production/v5/assets/renditions/wallpaper-1-1240.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.title-article {
+	display: block;
+	font-size: 3.2rem;
+	line-height: 6.4rem;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-weight: 600;
+	color: rgba(0,0,0,0.84);
+	margin-bottom: 0.24rem;
+}
+.space-article{
+    padding: 2.24rem 3.2rem 3.84rem 3.2rem;
+}
+.content-article{
+    padding: 1.6rem 0rem 1.6rem 0rem;
+}
+hr.separator {
+    border: solid 1px rgba(0,0,0,0.03);
+    margin: 1.6rem 0;
+}
+.info {
+  padding: 0;
+}
+.date {
+	color: rgba(0,0,0,0.54);
+    font-size: 1.344rem;
+    letter-spacing: 0.03rem;
+}
+.category {
+	color: rgba(0,0,0,0.54);
+    font-size: 1.344rem;
+    letter-spacing: 0.048rem;
+}
+p.text-article {
+    font-family: Georgia, serif;
+    font-size: 1.808rem;
+    line-height: 170%;
+    color: rgba(0,0,0,0.84);
+}
+.post-list-separator {
+  display: block;
+  height: 12rem;
+}

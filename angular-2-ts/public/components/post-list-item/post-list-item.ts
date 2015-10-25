@@ -11,7 +11,7 @@ import {RouterLink} from 'angular2/router';
 @View({
 	templateUrl: 'components/post-list-item/template.html',
 	styleUrls: [
-		'components/post-list-item/post-list-item.scss'
+		'components/post-list-item/post-list-item.scss', 'styles/buttons.scss', 'styles/card.scss'
 	],
 	directives: [RouterLink]
 })

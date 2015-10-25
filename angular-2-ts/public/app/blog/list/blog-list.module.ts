@@ -4,8 +4,7 @@ import {
 	Component, 
 	View,
 	NgFor,
-	Inject,
-	EventEmitter
+	Inject
 } from 'angular2/angular2';
 
 import {PostListItem, PostService} from 'components/components';
@@ -23,7 +22,13 @@ import {
 		BlogHeader,
 		PostListItem,
 		NgFor
-	]
+	],
+	styles: [`
+	.articles-container {
+		position: relative;
+    top: -12rem;
+	}
+	`]
 })
 export class BlogList {
 	

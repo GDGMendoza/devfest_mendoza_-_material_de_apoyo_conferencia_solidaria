@@ -27,7 +27,7 @@ import {
 		BlogHeader, RouterLink
 	],
 	styleUrls: [
-		'app/blog/detail/blog-detail.module.scss', 'app/blog/edit/blog-edit.module.scss', 'components/card/card.scss'
+		'app/blog/detail/blog-detail.module.scss', 'app/blog/edit/blog-edit.module.scss', 'styles/buttons.scss', 'styles/card.scss'
 	]
 })
 export class BlogEdit {

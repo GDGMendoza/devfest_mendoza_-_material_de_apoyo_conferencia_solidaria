@@ -1,4 +1,4 @@
-<div class="Post">
+<!--<div class="Post">
   <div class="Post-header">
     <div class="Post-header-articleTitle">
       {{PostTitle}}
@@ -12,7 +12,37 @@
     {{PostText}}
   </div>
   <div class="Post-footer">
-    <button [router-link]="['/BlogDetail', {id: PostID}]" class="Post-footer-articleBtn Post-footer-articleBtn--readMore">Leer más</button>
-    <div [router-link]="['/BlogEdit', {id: PostID}]" class="Post-footer-articleBtn Post-footer-articleBtn--edit">Editar</div>
+    <button  class="Post-footer-articleBtn Post-footer-articleBtn--readMore">Leer más</button>
   </div>
-</div>
+</div>-->
+
+<article class="row box center-xs article">
+  <div class="col-xs-12 col-md-8 Card no-padding">
+    <figure class="list-figure"></figure>
+    <div class="col-xs-12 space-article">
+      <div class="col-xs-12 start-xs">
+        <h2 class="title-article">{{PostTitle}}</h2>
+      </div>
+      <hr class="separator">
+        <div class="info col-xs-12">
+        <div class="row">
+          <div class="date col-xs-6 col-md-2 start-md start-xs">
+            22/02/2015
+          </div>
+          <div class="category col-xs-6 col-md-5 start-xs">
+            Arte y entretenimiento
+          </div>
+        </div>
+      </div>
+      <div class="content-article start-xs">
+        <p class="text-article">{{PostText}}</p>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 start-xs">
+          <a [router-link]="['/BlogDetail', {id: PostID}]" class="btn-ch btn-actions btn-edit">› Leer más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<div class="post-list-separator"></div>
