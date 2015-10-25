@@ -19,9 +19,9 @@ function createPost(PostTitle, PostCategory, PostText, callback){
       'PostCategory': PostCategory,
       'PostDate' : timeNow
   };
-  mysql.query(query, post, function(err, rows, fields) {
+  mysql.query(query, post, function(err, result) {
       if (err) console.warn(err);
-      callback({'status': true});
+      callback({'status': true, 'PostID': result.insertId});
   });
 }
 
@@ -59,7 +59,7 @@ function getPost(PostID, callback){
   var query = "SELECT * FROM post WHERE PostDeletedDate IS NULL AND PostID = " + PostID;
   mysql.query(query, function(err, rows, fields) {
       if (err) console.warn(err);
-      callback(rows);
+      callback(rows.length ? rows[0] : {});
   });
 }
 
