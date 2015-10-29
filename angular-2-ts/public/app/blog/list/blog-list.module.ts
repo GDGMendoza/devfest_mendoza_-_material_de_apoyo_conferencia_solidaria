@@ -1,4 +1,4 @@
-/// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.44/angular2.d.ts"/>
+/// <reference path="../../../../typings/tsd.d.ts" />
 
 import {
 	Component, 
@@ -32,12 +32,16 @@ import {
 })
 export class BlogList {
 	
-	postList = [];
+	postList: Array<project.IPost> = [];
+	
+	postService: project.PostService;
 	
 	constructor (@Inject(PostService) postService: PostService) {
-		var self = this;
-		postService.getPostList().then(function (list) {
-			self.postList = list;
-		});
+
+		this.postService = postService;
+
+		this.postService.getPostList().subscribe(res =>
+			this.postList = res
+		, e => console.error('e', e));
 	}
 }

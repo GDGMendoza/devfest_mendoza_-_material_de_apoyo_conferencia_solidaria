@@ -34,17 +34,21 @@ export class BlogDetail {
 		PostTitle: ''
 	};
 	
-	constructor (@Inject(PostService) public postService: PostService, @Inject(RouteParams) params: RouteParams, @Inject(Router) public router: Router) {
+	postService: project.PostService;
+	
+	constructor (@Inject(PostService) postService: PostService, @Inject(RouteParams) params: RouteParams, @Inject(Router) public router: Router) {
 		
-		var id = params.get('id');
+		this.postService = postService;
 		
-		postService.getPost(id).then(post => this.post = post);
+		var id = parseInt(params.get('id'));
+		
+		this.postService.getPost(id).subscribe(post => this.post = post);
 	}
 	
 	deletePost () {
-		this.postService.deletePost(this.post.PostID).then(() => {
-			this.router.navigate(['/BlogList']);
-		}).catch(e => console.error('e', e));
+		this.postService.deletePost(this.post.PostID).subscribe(() => 
+			this.router.navigate(['/BlogList'])
+		, e => console.error('e', e));
 	}
 	
 }

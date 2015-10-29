@@ -1,5 +1,7 @@
+/// <reference path="../rx/rx.d.ts" />
+
 declare module project {
-	
+
 	interface IPost {
 		PostID?: number;
 		PostDate?: string;
@@ -12,12 +14,12 @@ declare module project {
 		PostID: number;
 	}
 	
-	interface IPostService {
-		createPost(post: IPost): Promise<IPostID>;
-		deletePost(id: number): Promise<any>;
-		getPost(id: number): Promise<IPost>;
-		getPostList(): Promise<Array<IPost>>;
-		updatePost(post: IPost): Promise<IPost>;
+	class PostService {
+		createPost(post: IPost): Rx.Observable<IPostID>;
+		deletePost(id: number): Rx.Observable<any>;
+		getPost(id: number): Rx.Observable<IPost>;
+		getPostList(): Rx.Observable<Array<IPost>>;
+		updatePost(post: IPost): Rx.Observable<IPost>;
 	}
 	
 }

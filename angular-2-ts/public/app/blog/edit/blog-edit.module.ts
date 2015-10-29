@@ -39,17 +39,21 @@ export class BlogEdit {
 		PostTitle: ''
 	};
 	
-	constructor (@Inject(PostService) public postService: PostService, @Inject(RouteParams) params: RouteParams, @Inject(Router) public router: Router) {
+	postService: project.PostService;
+	
+	constructor (@Inject(PostService) postService: PostService, @Inject(RouteParams) params: RouteParams, @Inject(Router) public router: Router) {
 		
-		var id = params.get('id');
+		this.postService = postService;
 		
-		postService.getPost(id).then(post => this.post = post);
+		var id = parseInt(params.get('id'));
+		
+		this.postService.getPost(id).subscribe(post => this.post = post);
 	}
 	
 	updatePost () {
-		this.postService.updatePost(this.post).then(() => {
-			this.router.navigate(['/BlogDetail', {id: this.post.PostID}]);
-		}).catch(e => console.error('e', e));
+		this.postService.updatePost(this.post).subscribe(() =>
+			this.router.navigate(['/BlogDetail', {id: this.post.PostID}])
+		, e => console.error('e', e));
 	}
 	
 }

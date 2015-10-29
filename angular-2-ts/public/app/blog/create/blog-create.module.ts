@@ -1,4 +1,4 @@
-/// <reference path="../../../../typings/project/project.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
 
 import {
 	Component, 
@@ -18,6 +18,8 @@ import {
 import {
 	PostService
 } from 'components/components';
+
+import {Response} from "angular2/http";
 
 @Component({
 	selector: 'blog-edit'
@@ -39,16 +41,16 @@ export class BlogCreate {
 		PostCategory: ''
 	};
 	
-	constructor (@Inject(Router) public router: Router, @Inject(PostService) public postService: PostService) {
-		
+	postService: project.PostService;
+	
+	constructor (@Inject(Router) public router: Router, @Inject(PostService) postService: PostService) {
+		this.postService = postService;
 	}
 	
 	createPost () {
-		this.postService.createPost(this.post).then((response: project.IPostID) => {
-			this.router.navigate(['/BlogDetail', {id: response.PostID}]);
-		}).catch(function (e) {
-			console.error('e', e);
-		});
+		this.postService.createPost(this.post).subscribe(res =>
+			this.router.navigate(['/BlogDetail', {id: res.PostID}])
+		, e => console.error('e', e));
 	}
 	
 }
