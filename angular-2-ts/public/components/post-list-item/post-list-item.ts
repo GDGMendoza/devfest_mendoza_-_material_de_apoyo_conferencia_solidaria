@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/project/project.d.ts"/>
+/// <reference path="../../../typings/tsd.d.ts" />
 
 import {Component, View} from 'angular2/angular2';
 
@@ -21,12 +21,14 @@ export class PostListItem implements project.IPost {
 	PostDate;
 	PostTitle;
 	PostText;
+	PostCategory;
 	
 	set post (post: project.IPost) {
 		this.PostID = post.PostID;
 		this.PostDate = post.PostDate;
 		this.PostTitle = post.PostTitle;
 		this.PostText = post.PostText;
+		this.PostCategory = post.PostCategory;
 	}
 	
 }

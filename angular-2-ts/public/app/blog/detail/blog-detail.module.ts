@@ -1,4 +1,4 @@
-/// <reference path="../../../../typings/project/project.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
 
 import {
 	Component, 

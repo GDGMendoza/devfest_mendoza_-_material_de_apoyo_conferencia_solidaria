@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="App" timestamp="2015-10-29T23:46:43" hostname="localhost" time="0.003" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="App" name="can be instantiated" time="0.002" />
+ </testsuite>
+</testsuites>

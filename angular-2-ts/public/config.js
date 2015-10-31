@@ -12,7 +12,12 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   packages: {
+    // /base esta siendo utilizado por karma para realizar los test
+    "/base": {
+      "defaultExtension": "ts"
+    },
     "/app": {
       "defaultExtension": "ts"
     },
@@ -23,6 +28,7 @@ System.config({
       "defaultExtension": "ts"
     }
   },
+
   meta: {
     "angular2/angular2": {
       "deps": [
@@ -35,10 +41,10 @@ System.config({
   },
 
   map: {
-    "@reactivex/rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.6",
-    "angular2": "npm:angular2@2.0.0-alpha.44",
     "common:*": "common/*",
     "components:*": "components/*",
+    "@reactivex/rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.4",
+    "angular2": "npm:angular2@2.0.0-alpha.45",
     "css": "github:systemjs/plugin-css@0.1.18",
     "es6-shim": "github:es-shims/es6-shim@0.33.6",
     "kristoferjoseph/flexboxgrid": "github:kristoferjoseph/flexboxgrid@6.3.0",
@@ -87,19 +93,14 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:@reactivex/rxjs@5.0.0-alpha.6": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:angular2@2.0.0-alpha.44": {
+    "npm:angular2@2.0.0-alpha.45": {
       "@reactivex/rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.4",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "reflect-metadata": "npm:reflect-metadata@0.1.1",
+      "reflect-metadata": "npm:reflect-metadata@0.1.2",
       "zone.js": "npm:zone.js@0.5.8"
     },
     "npm:asn1.js@2.2.1": {
@@ -116,7 +117,7 @@ System.config({
     "npm:browserify-aes@1.0.5": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "buffer-xor": "npm:buffer-xor@1.0.3",
-      "cipher-base": "npm:cipher-base@1.0.1",
+      "cipher-base": "npm:cipher-base@1.0.2",
       "create-hash": "npm:create-hash@1.1.2",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
@@ -133,7 +134,7 @@ System.config({
     },
     "npm:browserify-des@1.0.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "cipher-base": "npm:cipher-base@1.0.1",
+      "cipher-base": "npm:cipher-base@1.0.2",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "des.js": "npm:des.js@1.0.0",
       "inherits": "npm:inherits@2.0.1"
@@ -166,7 +167,7 @@ System.config({
       "ieee754": "npm:ieee754@1.1.6",
       "is-array": "npm:is-array@1.0.1"
     },
-    "npm:cipher-base@1.0.1": {
+    "npm:cipher-base@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "inherits": "npm:inherits@2.0.1",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
@@ -186,7 +187,7 @@ System.config({
     },
     "npm:create-hash@1.1.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "cipher-base": "npm:cipher-base@1.0.1",
+      "cipher-base": "npm:cipher-base@1.0.2",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "inherits": "npm:inherits@2.0.1",
@@ -297,10 +298,6 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
-    },
-    "npm:reflect-metadata@0.1.1": {
-      "assert": "github:jspm/nodelibs-assert@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:reflect-metadata@0.1.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
