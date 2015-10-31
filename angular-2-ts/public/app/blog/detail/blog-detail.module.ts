@@ -6,10 +6,6 @@ import {
 	Inject
 } from 'angular2/angular2';
 
-import {
-	BlogHeader
-} from 'app/blog/blog-header';
-
 import {Router, RouteParams, RouterLink} from 'angular2/router';
 
 import {PostService} from 'components/components';
@@ -20,7 +16,7 @@ import {PostService} from 'components/components';
 @View({
 	templateUrl: 'app/blog/detail/template.html',
 	directives: [
-		BlogHeader, RouterLink
+		RouterLink
 	],
 	styleUrls: [
 		'app/blog/detail/blog-detail.module.scss', 'styles/buttons.scss', 'styles/card.scss'

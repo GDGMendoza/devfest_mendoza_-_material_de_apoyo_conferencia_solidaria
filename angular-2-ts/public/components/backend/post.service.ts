@@ -9,7 +9,7 @@ export class PostService implements project.PostService {
 	defaultHeaders: Headers;
 	
 	constructor (@Inject(Http) public http: Http) {
-		this.defaultHeaders = new Headers;
+		this.defaultHeaders = new Headers();
 		this.defaultHeaders.append('Content-Type', 'application/json');
 	}
 	

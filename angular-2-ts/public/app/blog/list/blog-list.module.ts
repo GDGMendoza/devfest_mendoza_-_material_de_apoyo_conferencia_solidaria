@@ -9,17 +9,12 @@ import {
 
 import {PostListItem, PostService} from 'components/components';
 
-import {
-	BlogHeader
-} from 'app/blog/blog-header';
-
 @Component({
 	selector: 'blog-list'
 })
 @View({
 	templateUrl: 'app/blog/list/template.html',
 	directives: [
-		BlogHeader,
 		PostListItem,
 		NgFor
 	],
@@ -32,7 +27,7 @@ import {
 })
 export class BlogList {
 	
-	postList: Array<project.IPost> = [];
+	postList: Array<project.IPost> = []; 
 	
 	postService: project.PostService;
 	

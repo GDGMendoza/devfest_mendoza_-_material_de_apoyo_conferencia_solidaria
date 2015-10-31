@@ -12,10 +12,6 @@ import {
 } from 'angular2/router';
 
 import {
-	BlogHeader
-} from 'app/blog/blog-header';
-
-import {
 	PostService
 } from 'components/components';
 
@@ -25,7 +21,7 @@ import {
 @View({
 	templateUrl: 'app/blog/edit/template.html',
 	directives: [
-		BlogHeader, RouterLink, FORM_DIRECTIVES
+		RouterLink, FORM_DIRECTIVES
 	],
 	styleUrls: [
 		'app/blog/detail/blog-detail.module.scss', 'app/blog/edit/blog-edit.module.scss', 'styles/buttons.scss', 'styles/card.scss'

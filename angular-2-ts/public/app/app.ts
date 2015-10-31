@@ -11,6 +11,8 @@ import {
 	RouterOutlet
 } from 'angular2/router';
 
+import {Header} from './header/header';
+
 import {
 	BlogCreate,
 	BlogDetail,
@@ -30,6 +32,7 @@ import {
 @View({
 	templateUrl: 'app/template.html',
 	directives: [
+		Header,
 		RouterLink,
 		RouterOutlet
 	],

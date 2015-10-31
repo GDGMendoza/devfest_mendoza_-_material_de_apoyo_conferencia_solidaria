@@ -10,17 +10,17 @@ import {
 } from 'angular2/router';
 
 @Component({
-	selector: 'blog-header'
+	selector: 'header'
 })
 @View({
-	templateUrl: 'app/blog/blog-header.html',
+	templateUrl: 'app/header/header.html',
 	directives: [
 		RouterLink
 	],
 	styleUrls: [
-		'app/blog/blog-header.scss'
+		'app/header/header.scss'
 	]
 })
-export class BlogHeader {
+export class Header {
 	
 }
