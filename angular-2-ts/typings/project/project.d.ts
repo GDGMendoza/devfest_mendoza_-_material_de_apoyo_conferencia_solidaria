@@ -8,6 +8,7 @@ declare module project {
 		PostTitle: string;
 		PostText: string;
 		PostCategory: string;
+		PostURL: string;
 	}
 	
 	interface IPostID {

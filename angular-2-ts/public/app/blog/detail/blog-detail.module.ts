@@ -43,7 +43,7 @@ export class BlogDetail {
 	
 	deletePost () {
 		this.postService.deletePost(this.post.PostID).subscribe(() => 
-			this.router.navigate(['/BlogList'])
+			this.router.navigate(['./BlogList'])
 		, e => console.error('e', e));
 	}
 	

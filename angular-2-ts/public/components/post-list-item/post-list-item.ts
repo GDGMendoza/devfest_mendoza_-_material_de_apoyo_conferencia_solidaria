@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-import {Component, View} from 'angular2/angular2';
+import {Component, View, NgStyle} from 'angular2/angular2';
 
 import {RouterLink} from 'angular2/router';
 
@@ -13,7 +13,7 @@ import {RouterLink} from 'angular2/router';
 	styleUrls: [
 		'components/post-list-item/post-list-item.scss', 'styles/buttons.scss', 'styles/card.scss'
 	],
-	directives: [RouterLink]
+	directives: [NgStyle, RouterLink]
 })
 export class PostListItem implements project.IPost {
 	
@@ -22,6 +22,7 @@ export class PostListItem implements project.IPost {
 	PostTitle;
 	PostText;
 	PostCategory;
+	PostURL = "https://g-design.storage.googleapis.com/production/v5/assets/renditions/wallpaper-1-1240.jpg";
 	
 	set post (post: project.IPost) {
 		this.PostID = post.PostID;

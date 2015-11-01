@@ -6,34 +6,21 @@ import {
 } from 'angular2/angular2';
 
 import {
-	RouteConfig, 
-	RouterLink, 
+	RouteConfig,
 	RouterOutlet
 } from 'angular2/router';
 
-import {Header} from './header/header';
-
 import {
-	BlogCreate,
-	BlogDetail,
-	BlogEdit,
-	BlogList
-} from './blog/blog';
+	Blog
+} from './blog/blog.module';
 
-@RouteConfig([
-	{path: '/', component: BlogList, as: 'BlogList'},
-	{path: '/create', component: BlogCreate, as: 'BlogCreate'},
-	{path: '/:id', component: BlogDetail, as: 'BlogDetail'},
-	{path: '/:id/edit', component: BlogEdit, as: 'BlogEdit'}
-])
+@RouteConfig([{path: '/blog/...', component: Blog, as: 'Blog'}])
 @Component({
 	selector: 'app'
 })
 @View({
-	templateUrl: 'app/template.html',
+	template: '<router-outlet></router-outlet>',
 	directives: [
-		Header,
-		RouterLink,
 		RouterOutlet
 	],
 	styleUrls: [
@@ -41,5 +28,5 @@ import {
 	]
 })
 export class App {
-
+	
 }

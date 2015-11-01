@@ -45,7 +45,7 @@ export class BlogCreate {
 	
 	createPost () {
 		this.postService.createPost(this.post).subscribe(res =>
-			this.router.navigate(['/BlogDetail', {id: res.PostID}])
+			this.router.navigate(['./BlogDetail', {id: res.PostID}])
 		, e => console.error('e', e));
 	}
 	

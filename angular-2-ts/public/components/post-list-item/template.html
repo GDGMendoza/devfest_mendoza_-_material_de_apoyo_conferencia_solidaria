@@ -18,7 +18,7 @@
 
 <article class="row box center-xs article">
   <div class="col-xs-12 col-md-8 Card no-padding">
-    <figure class="list-figure"></figure>
+    <figure class="list-figure" [ng-style]="{'background-image': 'url('+PostURL+')'}"></figure>
     <div class="col-xs-12 space-article">
       <div class="col-xs-12 start-xs">
         <h2 class="title-article">{{PostTitle}}</h2>
@@ -39,7 +39,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 start-xs">
-          <a [router-link]="['/BlogDetail', {id: PostID}]" class="btn-ch btn-actions btn-edit">› Leer más</a>
+          <a [router-link]="['/Blog/BlogDetail', {id: PostID}]" class="btn-ch btn-actions btn-edit">› Leer más</a>
         </div>
       </div>
     </div>

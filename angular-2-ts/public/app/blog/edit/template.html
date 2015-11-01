@@ -11,8 +11,8 @@
 				<input class="datepost" type="date" value="Submit">
 				</div>
 				<div class="category col-xs-6 col-sm-8 col-md-9 start-xs">
-				<span class="titleinputs" [(ng-model)]="post.PostCategory">Categoría</span>
-				<select class="typepost">
+				<span class="titleinputs">Categoría</span>
+				<select class="typepost"  [(ng-model)]="post.PostCategory">
 					<option value="volvo">Volvo</option>
 					<option value="saab">Saab</option>
 					<option value="mercedes">Mercedes</option>
@@ -26,7 +26,7 @@
 		<textarea placeholder="Escribe algo nuevo..." class="editpost" [(ng-model)]="post.PostText"></textarea>
 		<div class="row">
 			<div class="col-xs-12 start-xs">
-				<a (click)="updatePost();" class="btn-ch btn-save">Guardar</a><a class="btn-ch btn-actions" [router-link]="['/BlogDetail', {id: post.PostID}]">Cancelar</a>
+				<a (click)="updatePost();" class="btn-ch btn-save">Guardar</a><a class="btn-ch btn-actions" [router-link]="['/Blog/BlogDetail', {id: post.PostID}]">Cancelar</a>
 			</div>
 		</div>
 	</div>

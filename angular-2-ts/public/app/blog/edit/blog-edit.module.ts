@@ -48,7 +48,7 @@ export class BlogEdit {
 	
 	updatePost () {
 		this.postService.updatePost(this.post).subscribe(() =>
-			this.router.navigate(['/BlogDetail', {id: this.post.PostID}])
+			this.router.navigate(['./BlogDetail', {id: this.post.PostID}])
 		, e => console.error('e', e));
 	}
 	

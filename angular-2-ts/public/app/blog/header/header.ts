@@ -13,12 +13,12 @@ import {
 	selector: 'header'
 })
 @View({
-	templateUrl: 'app/header/header.html',
+	templateUrl: 'app/blog/header/header.html',
 	directives: [
 		RouterLink
 	],
 	styleUrls: [
-		'app/header/header.scss'
+		'app/blog/header/header.scss'
 	]
 })
 export class Header {
